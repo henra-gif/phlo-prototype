@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a workout · Phlo</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="create-workout-page">
+
+  <main>
+
+    <h3>Create a workout</h3>
+
+    <section class="workout-form">
+
+  <h2>Build your Phlo</h2>
+
+  <p class="form-intro">
+    First, choose the kind of movement that feels right today.
+  </p>
+
+  <fieldset class="choice-group">
+    <legend>What would you like to focus on?</legend>
+
+   <div class="choice-options focus-options">
+      <label class="choice-card">
+        <input type="radio" name="focus" value="Pilates" checked>
+        <span>Pilates</span>
+      </label>
+
+      <label class="choice-card">
+        <input type="radio" name="focus" value="Yoga">
+        <span>Yoga</span>
+      </label>
+
+      <label class="choice-card">
+        <input type="radio" name="focus" value="Mobility">
+        <span>Mobility</span>
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset class="choice-group">
+    <legend>How would you like it to feel?</legend>
+
+    <div class="choice-options">
+      <label class="choice-card">
+        <input type="radio" name="intensity" value="Relaxing" checked>
+        <span>Relaxing</span>
+      </label>
+
+      <label class="choice-card">
+        <input type="radio" name="intensity" value="Intense">
+        <span>Intense</span>
+      </label>
+    </div>
+  </fieldset>
+
+  <button class="create-workout-button" type="button">
+    Suggest moves
+  </button>
+
+  <p class="workout-result"></p>
+
+</section>
+<section class="suggested-moves-screen">
+
+  <h2>Your suggested moves</h2>
+
+  <p class="suggestions-intro">
+    Here's some moves to get you started.
+    You can customise it before saving.
+  </p>
+
+  <div class="suggested-exercises">
+
+    <button class="exercise-choice" type="button" aria-pressed="true">
+      <span>Cat-cow</span>
+      <span class="exercise-choice-status">✓ Added</span>
+    </button>
+
+    <button class="exercise-choice" type="button" aria-pressed="true">
+      <span>Child's pose</span>
+      <span class="exercise-choice-status">✓ Added</span>
+    </button>
+
+    <button class="exercise-choice" type="button" aria-pressed="true">
+      <span>Bridge</span>
+      <span class="exercise-choice-status">✓ Added</span>
+    </button>
+
+    <button class="exercise-choice" type="button" aria-pressed="false">
+      <span>Downward dog</span>
+      <span class="exercise-choice-status">+ Add</span>
+    </button>
+    <button class="exercise-choice" type="button" aria-pressed="false">
+  <span>Hundred</span>
+  <span class="exercise-choice-status">+ Add</span>
+</button>
+
+<button class="exercise-choice" type="button" aria-pressed="false">
+  <span>Roll up</span>
+  <span class="exercise-choice-status">+ Add</span>
+</button>
+
+<button class="exercise-choice" type="button" aria-pressed="false">
+  <span>Plank</span>
+  <span class="exercise-choice-status">+ Add</span>
+</button>
+
+<button class="exercise-choice" type="button" aria-pressed="false">
+  <span>Side plank</span>
+  <span class="exercise-choice-status">+ Add</span>
+</button>
+
+  </div>
+
+  <button class="create-workout-button suggest-different-button" type="button">
+  Suggest different moves
+</button>
+
+ <button class="create-workout-button continue-to-durations-button" type="button">
+  Continue to customise
+</button>
+
+</section>
+<section class="duration-screen">
+
+  <h2>Customise your Phlo</h2>
+
+  <p>
+    Adjust how long each move lasts and the rest between exercises.
+  </p>
+
+  <div class="duration-exercise-list"></div>
+
+  <label for="rest-duration">Rest between exercises</label>
+
+  <select id="rest-duration">
+    <option value="0">No rest</option>
+    <option value="10" selected>10 seconds</option>
+    <option value="20">20 seconds</option>
+    <option value="30">30 seconds</option>
+  </select>
+
+  <button class="create-workout-button review-workout-button" type="button">
+  Review your Phlo
+</button>
+
+</section>
+<section class="review-screen">
+
+  <h2>Review your Phlo</h2>
+
+  <p>
+    Happy with your moves? Give your Phlo a name before saving it.
+  </p>
+
+  <label for="flow-name">Name your Phlo</label>
+  <input
+    id="flow-name"
+    type="text"
+    value="Morning Flow - short"
+    maxlength="40"
+  >
+
+  <div class="review-summary">
+
+    <h3>Your Phlo</h3>
+
+    <div id="review-exercise-list"></div>
+
+    <div class="review-stats">
+      <p>
+        <span>Moves</span>
+        <strong id="review-move-count">0</strong>
+      </p>
+
+      <p>
+        <span>Rest between exercises</span>
+        <strong id="review-rest">10 seconds</strong>
+      </p>
+
+      <p>
+        <span>Total time</span>
+        <strong id="review-total-time">0 min</strong>
+      </p>
+    </div>
+
+  </div>
+
+  <button class="create-workout-button save-flow-button" type="button">
+    Save Phlo
+  </button>
+
+</section>
+<section class="flow-saved-screen">
+
+  <div class="flow-saved-check" aria-hidden="true">✓</div>
+
+  <h2>
+    <span id="saved-flow-name">Your flow</span>
+    added to your home screen
+  </h2>
+
+  <p>You can start this workout anytime from “My Phlos.”</p>
+
+  <a class="add-workout-button return-home-button" href="index.html">
+    Return home
+  </a>
+
+</section>
+
+    <section class="generated-workout">
+
+     <h3 class="generated-workout-title">Your workout is ready</h3>
+
+      <h4 class="generated-workout-title"></h4>
+
+      <p class="generated-workout-details"></p>
+
+      <p class="generated-workout-description"></p>
+
+      <button class="start-generated-workout">Start workout</button>
+
+    </section>
+
+
+    <section class="workout-screen">
+
+      <h2>Let's move</h2>
+
+      <p class="workout-screen-details"></p>
+
+      <div class="exercise-card">
+        <h3>Cat-cow</h3>
+        <p>60 seconds</p>
+      </div>
+
+      <div class="exercise-card">
+        <h3>Child's pose</h3>
+        <p>60 seconds</p>
+      </div>
+
+      <button class="next-exercise-button">Next exercise</button>
+
+      <button class="reset-workout-button">End workout</button>
+
+    </section>
+    <section class="workout-complete">
+  <h1>Workout complete!</h1>
+  <a class="add-workout-button return-home-button" href="index.html">Return home</a>
+</section>
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
