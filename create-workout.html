@@ -13,7 +13,26 @@
 
   <main>
 
-    <h3>Create a workout</h3>
+<div class="flow-progress-header">
+
+  <button
+    class="flow-back-button"
+    type="button"
+    aria-label="Go back"
+  >
+    ‹
+  </button>
+
+  <div class="flow-progress-dots" aria-label="Step 1 of 4">
+    <span class="flow-progress-dot active"></span>
+    <span class="flow-progress-dot"></span>
+    <span class="flow-progress-dot"></span>
+    <span class="flow-progress-dot"></span>
+  </div>
+
+  <p class="flow-step-label">Build a flow · step 1</p>
+
+</div>
 
     <section class="workout-form">
 
@@ -59,6 +78,7 @@
       </label>
     </div>
   </fieldset>
+  </fieldset>
 
   <button class="create-workout-button" type="button">
     Suggest moves
@@ -67,6 +87,22 @@
   <p class="workout-result"></p>
 
 </section>
+
+<section class="suggestions-loading-screen"
+         role="status"
+         aria-live="polite">
+
+  <div class="loading-spinner" aria-hidden="true"></div>
+
+  <h2 id="loading-title">Putting together your flow...</h2>
+
+<p id="loading-description">
+  Finding moves to suit your preferences.
+</p>
+
+</section>
+
+
 <section class="suggested-moves-screen">
 
   <h2>Your suggested moves</h2>
